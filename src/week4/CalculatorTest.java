@@ -25,11 +25,11 @@ public class CalculatorTest
 
    @Test
    void testSubtractionCorrect(){
-      assertEquals(5, calculator.subtract(5,10));
+      assertEquals(5, calculator.subtract(10,5));
    }
 
    @Test
    void testSubtractionFalse(){
-      assertEquals(5, calculator.subtract(4,10));
+      assertEquals(5, calculator.subtract(10,4));
    }
 }//class
