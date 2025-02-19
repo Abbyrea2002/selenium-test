@@ -7,10 +7,10 @@ package week4;
 
 
 public class BankAccount {
-   private double balance;
+   private int balance;
 
-   public BankAccount() {
-      this.balance = 0.0; // Start with a balance of 0
+   public BankAccount(int balance) {
+      this.balance = balance; // Start with a balance of 0
    }
 
    // Method to deposit money
