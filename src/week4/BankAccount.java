@@ -10,7 +10,7 @@ public class BankAccount {
    private int balance;
 
    public BankAccount(int balance) {
-      this.balance = balance; // Start with a balance of 0
+      this.balance = balance  ; // Start with a balance of 0
    }
 
    // Method to deposit money
@@ -36,5 +36,7 @@ public class BankAccount {
    public double getBalance() {
       return balance;
    }
+
+
 }
 
