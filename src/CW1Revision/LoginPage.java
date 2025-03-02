@@ -1,5 +1,7 @@
 package CW1Revision;
 
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -9,6 +11,7 @@ import org.openqa.selenium.WebDriver;
  */
 public class LoginPage
 {
+
    private WebDriver driver;
 
    //Locators
@@ -27,10 +30,10 @@ public class LoginPage
    public void enterUsername(String username){
       driver.findElement(usernameField).sendKeys(username);
    }
-   public void enterPasswrod(String password){
+   public void enterPassword(String password){
       driver.findElement(passwordField).sendKeys(password);
    }
-   public void clickLogin(String username){
+   public void clickLogin(){
       driver.findElement(loginButton).click();
    }
    public String getErrorMessage(){
