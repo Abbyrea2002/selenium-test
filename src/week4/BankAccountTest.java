@@ -23,8 +23,11 @@ public class BankAccountTest{
    @Test
    public void testDepositInvalid(){
       BankAccount account = new BankAccount(700);
+      //specify exception
       assertThrows(IllegalArgumentException.class, () ->{
+         //block of code which should throw excpetion
          account.deposit(-700);
+         //if thrown test passes
       });
    }
 
