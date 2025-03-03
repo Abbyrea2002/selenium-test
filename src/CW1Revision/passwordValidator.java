@@ -1,19 +1,19 @@
 package CW1Revision;
 
-import java.util.regex.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
- * Created by abbyr on 27/02/2025
+ * Created by abbyr on 03/03/2025
  * COMMENTS ABOUT PROGRAM HERE
  */
 public class passwordValidator
 {
-   //function to validate password
    public static boolean isValidPassword(String password){
       //Regex to check valid password
       String regex = "^(?=.*[0-9])" //must contain least 1 digit
             +"(?=.*[a-z])(?=.*[A-Z])"//1 cap or lower cap letter
-            +"(?=.*[@#$%^&+=!?])" // 1 special char
+            //+"(?=.*[@#$%^&+=!?])" // 1 special char
             +"(?=\\S+$).{8,20}$"; //no spaces atleast 8 char most 20
       //compile ReGex
       Pattern p = Pattern.compile(regex);
@@ -30,12 +30,12 @@ public class passwordValidator
       return m.matches();
    }
 
-   public static void main(String args[]){
-      //test 1
-      String str1 = "Meredith2023!";
-      System.out.println(isValidPassword(str1));
-
-      String str2 = "Mer2023";
-      System.out.println(isValidPassword(str2));
-   }
+//   public static void main(String args[]){
+//      //test 1
+//      String str1 = "Meredith2023!";
+//      System.out.println(isValidPassword(str1));
+//
+//      String str2 = "Mer2023";
+//      System.out.println(isValidPassword(str2));
+//   }
 }//class

@@ -1,6 +1,15 @@
 package main;
 public class FootballTeam implements Comparable <FootballTeam>{
    public int gamesWon;
+
+//    public FootballTeam(int gamesWon){
+//        this.gamesWon = gamesWon;
+//    }
+
+   public int getGamesWon(){
+      return gamesWon;
+   }
+
    public FootballTeam(int gamesWon){
       if(gamesWon < 0){
          throw new IllegalArgumentException(
@@ -9,12 +18,12 @@ public class FootballTeam implements Comparable <FootballTeam>{
       }
       this.gamesWon = gamesWon;
    }
-   public int getGameswon() {
-      return gamesWon;
-   }
 
    @Override
    public int compareTo(FootballTeam o){
-      return 1;
+      if(gamesWon > o.getGamesWon()){
+         return 1;
+      }
+      return 0;
    }
 }//class

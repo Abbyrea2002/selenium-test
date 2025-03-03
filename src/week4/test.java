@@ -4,7 +4,7 @@ package week4;
  * Created by abbyr on 19/02/2025
  * COMMENTS ABOUT PROGRAM HERE
  */
-public class Main
+public class test
 {
    public static void main(String[] args) {
       //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
