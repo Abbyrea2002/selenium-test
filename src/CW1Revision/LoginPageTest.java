@@ -2,11 +2,15 @@ package CW1Revision;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import CW1Revision.passwordValidator;
 
+
+import static org.assertj.core.api.Fail.fail;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
@@ -19,6 +23,10 @@ public class LoginPageTest
 
    private WebDriver driver;
    private LoginPage loginPage;
+//   @Test
+//   public void sampleTest() {
+//      assertEquals(2, 1 + 1);
+//   }
 
    @BeforeEach
    public void setUp(){
@@ -27,15 +35,25 @@ public class LoginPageTest
       driver.manage().window().maximize();
       driver.get("https://practicetestautomation.com/practice-test-login/");
       loginPage = new LoginPage(driver);
+
+      passwordValidator = new passwordValidator();
    }
 
    @ParameterizedTest
    @CsvSource({
-         "student, Password123, Success",
-         "invalidUser, Password123, Failure",
-         "student, WrongPass, Failure"
+         "student, Password123!, Success",
+         "invalidUser, short1!, Failure",
+         "student, NoNumber!, Failure",
+         "student, Abcdefgh123!, Success"
    })
    public void testLogin(String username, String password, String expectedOutcome){
+      System.err.println("checking password" + password);
+      if(!passwordValidator.isValidPassword(password)){
+         System.err.println("invalid password detected: " + password);
+         fail("invalid password format: " + password);
+      }else{
+         System.out.println("password is valid" + password);
+      }
       loginPage.enterUsername(username);
       loginPage.enterPassword(password);
       loginPage.clickLogin();
