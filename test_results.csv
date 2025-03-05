@@ -1,0 +1,15 @@
+Username,Password,ExpectedOutcome,ActualOutcome
+student,Password123,Success,Success
+invalidUser,short1,Failure,Exception
+student,NoNumber,Failure,Exception
+student,Password123,Success,Success
+invalidUser,short1,Failure,Exception
+student,NoNumber,Failure,Exception
+student,Password123,Success,Exception
+invalidUser,short1,Failure,Exception
+student,NoNumber,Failure,Exception
+student,Password123,Success,Success
+invalidUser,short1,Failure,Failure
+student,NoNumber,Failure,Failure
+student,Password123,Success,Success
+invalidUser,short1,Failure,Failure
