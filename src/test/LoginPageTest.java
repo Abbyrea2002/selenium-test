@@ -47,6 +47,7 @@ public class LoginPageTest
          logger.info("Test setup completed. Browser launched and navigated to login page.");
       }catch(Exception e){
          logger.severe("Failed to initialize WebDriver: " + e.getMessage());
+         fail("WebDriver initialization failed.");
       }
    }
 
@@ -72,12 +73,13 @@ public class LoginPageTest
         loginPage.enterPassword(password);
         loginPage.clickLogin();
 
+        String expectedUrl = "https://practicetestautomation.com/logged-in-successfully/";
         if (expectedOutcome.equals("Success"))
         {
-           assertEquals("https://practicetestautomation.com/logged-in-successfully/", driver.getCurrentUrl());
+           assertEquals(expectedUrl, driver.getCurrentUrl());
         } else
         {
-           assertNotEquals("https://practicetestautomation.com/logged-in-successfully/", driver.getCurrentUrl());
+           assertNotEquals(expectedUrl, driver.getCurrentUrl());
         }
         logger.info("Valid login test completed successfully.");
      }catch(Exception e){
