@@ -1,9 +1,6 @@
-package test;
-
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.openqa.selenium.OutputType;
@@ -17,7 +14,8 @@ import static org.assertj.core.api.Fail.fail;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assumptions.assumeTrue;
-import main.*;
+
+import week4.passwordValidator;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -26,10 +24,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.logging.FileHandler;
-import java.util.logging.Level;
 import java.util.logging.Logger;
-import java.util.logging.SimpleFormatter;
 
 /**
  * Created by abbyr on 26/02/2025
@@ -41,8 +36,8 @@ public class LoginPageTest
    private WebDriver driver;
    private LoginPage loginPage;
    private static final Logger logger = Logger.getLogger(LoginPageTest.class.getName());
-   private static final String CSV_FILE = "C:\\Users\\abbyr\\Documents\\CSV\\test_results.csv";
-   private static final String REPORT_FILE = "C:\\Users\\abbyr\\Documents\\CSV\\test_summary.txt"; // Summary report file
+   private static final String CSV_FILE = "C:\\Users\\B00835054\\Downloads\\test_results.csv";
+   private static final String REPORT_FILE = "C:\\Users\\B00835054\\Downloads\\test_summary.txt"; // Summary report file
 
    private static int totalTests = 0;
    private static int passedTests = 0;
@@ -64,7 +59,7 @@ public class LoginPageTest
    public void setUp(){
       try
       {
-         System.setProperty("webdriver.chrome.driver", "C:\\Users\\abbyr\\Downloads\\chromedriver-win64\\chromedriver.exe");
+         System.setProperty("webdriver.chrome.driver", "C:\\Users\\B00835054\\Downloads\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe");
          driver = new ChromeDriver();
          driver.manage().window().maximize();
          driver.get("https://practicetestautomation.com/practice-test-login/");
@@ -80,7 +75,7 @@ public class LoginPageTest
    public void captureScreenshot(String screenshotName) {
       // Define the folder where screenshots will be saved.
       // Make sure this folder exists or create it.
-      String folder = "C:\\Users\\abbyr\\Documents\\CSV\\Screenshots\\";
+      String folder = "C:\\Users\\B00835054\\Downloads\\Screenshots\\";
       File directory = new File(folder);
       if (!directory.exists()) {
          directory.mkdirs();  // Creates the folder if it doesn't exist

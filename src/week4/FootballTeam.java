@@ -1,4 +1,4 @@
-package main;
+package week4;
 public class FootballTeam implements Comparable <FootballTeam>{
    public int gamesWon;
 
